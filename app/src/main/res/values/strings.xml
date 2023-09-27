@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">K-beer</string>
+    <string name="login">Entrar</string>
+    <string name="input_name">Escribe tu nombre</string>
+    <string name="preference_name">PREFERENCES_NAME</string>
+    <string name="preference">PREFERENCES</string>
+</resources>
