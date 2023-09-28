@@ -2,8 +2,16 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Kbeer" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorButtonNormal">@color/button_color</item>
+        <item name="colorTertiary">@color/edt_bg</item>
+        <item name="colorAccent">@color/title_card_bg</item>
     </style>
 
-    <style name="Theme.Kbeer" parent="Base.Theme.Kbeer" />
+    <style name="Theme.Kbeer" parent="Base.Theme.Kbeer">
+    </style>
+
+
+
 </resources>

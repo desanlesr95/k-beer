@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         app:cardElevation="@dimen/card_elevation"
         app:cardUseCompatPadding="true"
+        android:id="@+id/card_beer"
         app:cardCornerRadius="@dimen/card_radius">
 
 
@@ -24,6 +25,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/name"
+                android:padding="@dimen/pa_default"
+                android:textStyle="bold"
+                android:background="?attr/colorAccent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -34,20 +38,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/image_beer"
                 android:id="@+id/image"
+                android:layout_marginTop="@dimen/ma_md"
                 app:layout_constraintTop_toBottomOf="@id/name"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/contributed"
+                app:layout_constraintBottom_toTopOf="@+id/alcohol"
                 app:loadImage="@{beer.image_url}"/>
 
+
+
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{beer.contributed_by}"
-                android:id="@+id/contributed"
+                app:setAbv="@{beer.abv}"
+                android:textSize="@dimen/card_subtitle"
+                android:id="@+id/alcohol"
                 app:layout_constraintTop_toBottomOf="@id/image"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginRight="@dimen/ma_default"
+                android:layout_marginTop="@dimen/ma_default"
+               android:gravity="right"
                 />
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

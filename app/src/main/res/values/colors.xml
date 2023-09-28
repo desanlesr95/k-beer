@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="primary">#598BE2</color>
-    <color name="secondary">#684DFF</color>
+    <color name="primary_dark">#1A1C1F</color>
+    <color name="secondary">#5B3DFF</color>
+    <color name="secondary_dark">#C0D6DC</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="button_color">#3F51B5</color>
+    <color name="button_color_dark">#A0ACEB</color>
+    <color name="edt_bg">#E8E7E7</color>
+    <color name="title_card_bg">#7AEDE2ED</color>
+    <color name="title_card_bg_dark">#7A5430CA</color>
 </resources>

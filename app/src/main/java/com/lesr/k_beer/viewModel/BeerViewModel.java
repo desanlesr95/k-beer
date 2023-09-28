@@ -28,8 +28,8 @@ public class BeerViewModel extends ViewModel {
         return beers;
     }
 
-    public void getBeersApi(){
-        apiService.getBeer().enqueue(new Callback<Beer[]>() {
+    public void getBeersApi(int page){
+        apiService.getBeer(page).enqueue(new Callback<Beer[]>() {
             @Override
             public void onResponse(Call<Beer[]> call, Response<Beer[]> response) {
                 _beers.setValue(response.body());

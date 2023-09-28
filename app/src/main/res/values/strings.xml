@@ -4,4 +4,8 @@
     <string name="input_name">Escribe tu nombre</string>
     <string name="preference_name">PREFERENCES_NAME</string>
     <string name="preference">PREFERENCES</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_beer_list">Beers</string>
+    <string name="loading">Cargando..</string>
 </resources>

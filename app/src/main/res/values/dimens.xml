@@ -2,12 +2,16 @@
 <resources>
     <dimen name="titleApp">35dp</dimen>
     <dimen name="pa_default">14dp</dimen>
-    <dimen name="pa_md">19dp</dimen>
-    <dimen name="pa_lg">30dp</dimen>
+    <dimen name="pa_md">20dp</dimen>
+    <dimen name="pa_lg">34dp</dimen>
     <dimen name="ma_default">8dp</dimen>
+    <dimen name="ma_md">12dp</dimen>
     <dimen name="icon">120dp</dimen>
     <dimen name="space_y_login">50dp</dimen>
     <dimen name="card_radius">8dp</dimen>
     <dimen name="card_elevation">6dp</dimen>
     <dimen name="image_beer">150dp</dimen>
+    <dimen name="card_title">18sp</dimen>
+    <dimen name="card_subtitle">14sp</dimen>
+    <dimen name="radius_default">20dp</dimen>
 </resources>
