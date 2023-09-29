@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         setSupportActionBar(binding.toolbar);
-
     }
 
 
@@ -36,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     public void setTitleActionBar(String title) {
         binding.toolbar.setTitle(title);
     }
+
+
 
 
 }

@@ -21,6 +21,7 @@
         <action
             android:id="@+id/action_fragment_beerList_to_fragment_beerDetail"
             app:destination="@id/fragment_beerDetail" />
+
     </fragment>
 
 
@@ -28,6 +29,16 @@
         android:id="@+id/fragment_beerDetail"
         android:name="com.lesr.k_beer.view.fragment.BeerDetailFragment"
         tools:layout="@layout/fragment_beer_detail">
+
+        <action
+            android:id="@+id/action_fragment_beerDetail_to_fragment_ingredients"
+            app:destination="@id/fragment_ingredients" />
+    </fragment>
+
+
+    <fragment android:id="@+id/fragment_ingredients"
+        android:name="com.lesr.k_beer.view.fragment.IngredientsFragment"
+        tools:layout="@layout/fragment_ingredients">
 
     </fragment>
 </navigation>

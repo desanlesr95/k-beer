@@ -2,17 +2,32 @@ package com.lesr.k_beer.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.SerializedName;
 
 import lombok.Data;
 
 @Data
+@Entity
 public class Amount implements Parcelable {
+    @PrimaryKey(autoGenerate = true)
+    public int id_amount;
+    @ColumnInfo(name = "value")
     @SerializedName("value")
-    Float value;
-    @SerializedName("unit")
-    String unit;
+    public Float value;
 
+    @ColumnInfo(name = "unit")
+    @SerializedName("unit")
+    public String unit;
+
+
+    public Amount() {
+    }
 
     protected Amount(Parcel in) {
         value = in.readFloat();

@@ -2,47 +2,98 @@ package com.lesr.k_beer.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import androidx.room.ColumnInfo;
+import androidx.room.Embedded;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+import androidx.room.Relation;
+
 import com.google.gson.annotations.SerializedName;
 import lombok.Data;
+import lombok.Getter;
+import lombok.ToString;
 
 
-@Data
+@ToString
+@Entity
 public class Beer implements Parcelable{
+    @PrimaryKey
     @SerializedName("id")
-    int id;
+    public int id;
+
+    @ColumnInfo(name = "name")
     @SerializedName("name")
-    String name;
-    @SerializedName("tagline")
-    String tagline;
-    @SerializedName("description")
-    String description;
-    @SerializedName("image_url")
-    String image_url;
-    @SerializedName("fisrt_brewed")
-    String first_brewed;
-    @SerializedName("abv")
-    Float abv; // % Alcohol
-    @SerializedName("ibu")
-    Float ibu; // Amargor lúpliups utilizado
-    @SerializedName("attenuation_level")
-    Float attenuation_level; // Nievel de azucares mas bajo más dulce
-    @SerializedName("srm")
-    Float srm;
-    @SerializedName("ph")
-    Float ph;
-    @SerializedName("food_pairing") // Recomendaciones de alimnetos
-    String[] food_pairing;
-    @SerializedName("brewers_tips") //Consejos de consumo
-    String brewers_tips;
-    @SerializedName("contributed_by")
-    String contributed_by;
+    public String mName;
+
+    @ColumnInfo(name = "tagline")
+    @SerializedName("tagline")@Getter
+    public String tagline;
+
+    @ColumnInfo(name = "description")
+    @SerializedName("description")@Getter
+    public String description;
+
+    @ColumnInfo(name = "image_url")
+    @SerializedName("image_url")@Getter
+    public String image_url;
+
+    @ColumnInfo(name = "first_brewed")
+    @SerializedName("first_brewed")@Getter
+   public String first_brewed;
+
+    @ColumnInfo(name = "abv")
+    @SerializedName("abv")@Getter
+    public Float abv; // % Alcohol
+
+    @ColumnInfo(name = "ibu")
+    @SerializedName("ibu")@Getter
+    public Float ibu; // Amargor lúpliups utilizado
+
+    @ColumnInfo(name = "attenuation_level")
+    @SerializedName("attenuation_level")@Getter
+    public Float attenuation_level; // Nievel de azucares mas bajo más dulce
+
+    @ColumnInfo(name = "srm")
+    @SerializedName("srm")@Getter
+    public Float srm;
+
+    @ColumnInfo(name = "ph")
+    @SerializedName("ph")@Getter
+    public Float ph;
+
+
+    @SerializedName("food_pairing")@Getter // Recomendaciones de alimnetos
+    public String[] food_pairing;
+
+    @ColumnInfo(name = "brewers_tip")
+    @SerializedName("brewers_tips")@Getter //Consejos de consumo
+    public String brewers_tips;
+
+    @ColumnInfo(name = "contributed_by")
+    @SerializedName("contributed_by")@Getter
+    public String contributed_by;
+
+
     @SerializedName("ingredients")
-    Ingredients ingredients;
+    @Ignore
+    public Ingredients ingredients;
+
+    public Beer(){}
+
+    public String getName() {
+        return mName;
+    }
+
+    public Ingredients getIngredients() {
+        return ingredients;
+    }
 
     protected Beer(Parcel in) {
         // Leer los datos del Parcel y asignarlos a las variables miembro
         id = in.readInt();
-        name = in.readString();
+        mName = in.readString();
         tagline = in.readString();
         description = in.readString();
         // ... y así sucesivamente para las otras variables miembro
@@ -68,7 +119,7 @@ public class Beer implements Parcelable{
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(id);
-        dest.writeString(name);
+        dest.writeString(mName);
         dest.writeString(tagline);
         dest.writeString(description);
         dest.writeString(image_url);

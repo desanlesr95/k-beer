@@ -2,24 +2,46 @@ package com.lesr.k_beer.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import androidx.room.ColumnInfo;
+import androidx.room.Embedded;
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.SerializedName;
 import lombok.Data;
 
 @Data
+@Entity
 public class Hops implements Parcelable {
+    @PrimaryKey(autoGenerate = true)
+    public int id_hop;
+    @ColumnInfo(name = "id_amount")
+    public int id_amount;
 
+    @ColumnInfo(name = "ingredientsId")
+    public int ingredientsID;
+
+    @ColumnInfo(name = "name")
     @SerializedName("name")
-    String name;
+    public String name;
 
-    @SerializedName("amount")
-    Amount amount;
+    @SerializedName("amount")@Ignore
+    public Amount amount;
 
+    @ColumnInfo(name = "add")
     @SerializedName("add")
-    String add;
+    public String add;
 
-
+    @ColumnInfo(name = "attribute")
     @SerializedName("attribute")
-    String attribute;
+    public String attribute;
+
+    public Hops(){
+
+    }
 
 
     protected Hops(Parcel in) {

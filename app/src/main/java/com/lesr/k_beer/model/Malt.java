@@ -3,16 +3,34 @@ package com.lesr.k_beer.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Embedded;
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.SerializedName;
 import lombok.Data;
 
 @Data
+@Entity
 public class Malt implements Parcelable {
-    @SerializedName("name")
-    String name;
+    @PrimaryKey(autoGenerate = true)
+    public int id_malt;
+    @ColumnInfo(name = "ingredientsId")
+    public int ingredientsId;
 
-    @SerializedName("amount")
-    Amount amount;
+    @ColumnInfo(name = "id_amount")
+    public int id_amount;
+    @SerializedName("name")
+    public String name;
+    @SerializedName("amount")@Ignore
+    public Amount amount;
+
+    public Malt(){
+
+    }
 
     protected Malt(Parcel in) {
         name = in.readString();

@@ -22,10 +22,16 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.ViewHolder> {
     public ArrayList<Beer> beers;
     public Activity activity;
     NavController navController;
+    int strategy = 0;
 
-    public BeerAdapter(Activity activity){
+    public BeerAdapter(Activity activity,int strategy){
         this.beers = new ArrayList<>();
+        this.strategy =  strategy;
         this.navController = Navigation.findNavController(activity, R.id.nav_controller);
+    }
+
+    public void setStrategy(int strategy) {
+        this.strategy = strategy;
     }
 
     @NonNull
@@ -67,6 +73,7 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.ViewHolder> {
                 public void onClick(View view) {
                     Bundle bundle= new Bundle();
                     bundle.putParcelable(Constants.BEER_DETAIL,beer);
+                    bundle.putInt(Constants.STRATEGY,strategy);
                     navController.navigate(R.id.action_fragment_beerList_to_fragment_beerDetail,bundle);
                 }
             });

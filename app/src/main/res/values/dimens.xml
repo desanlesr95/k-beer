@@ -11,7 +11,9 @@
     <dimen name="card_radius">8dp</dimen>
     <dimen name="card_elevation">6dp</dimen>
     <dimen name="image_beer">150dp</dimen>
+    <dimen name="image_beer_detail">250dp</dimen>
     <dimen name="card_title">18sp</dimen>
     <dimen name="card_subtitle">14sp</dimen>
     <dimen name="radius_default">20dp</dimen>
+    <dimen name="text_description">18dp</dimen>
 </resources>

@@ -8,4 +8,15 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_beer_list">Beers</string>
     <string name="loading">Cargando..</string>
+    <string name="ingredients">Ingredientes</string>
+    <string name="attenuation">Atenuación</string>
+    <string name="abv">Alcohol</string>
+    <string name="ibu">Lúpulos</string>
+    <string name="ph">Ph</string>
+    <string name="srm">SRM</string>
+    <string name="brewers_tips">Consejos de consumo</string>
+    <string name="food_pairing">Recomendaciones de alimentos</string>
+    <string name="malt">Malta</string>
+    <string name="name">Nombre:</string>
+    <string name="cant">Cantidad:</string>
 </resources>

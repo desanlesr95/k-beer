@@ -7,11 +7,15 @@
         <item name="colorButtonNormal">@color/button_color</item>
         <item name="colorTertiary">@color/edt_bg</item>
         <item name="colorAccent">@color/title_card_bg</item>
+        <item name="colorContainer">@color/primary</item>
     </style>
 
     <style name="Theme.Kbeer" parent="Base.Theme.Kbeer">
     </style>
 
-
+    <style name="TextLevelsBeer" parent="Base.Theme.Kbeer">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 
 </resources>
