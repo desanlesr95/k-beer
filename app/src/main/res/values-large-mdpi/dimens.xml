@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="titleApp">68dp</dimen>
+    <dimen name="pa_default">16dp</dimen>
+    <dimen name="pa_md">28dp</dimen>
+    <dimen name="pa_lg">40dp</dimen>
+    <dimen name="ma_default">14dp</dimen>
+    <dimen name="ma_md">18dp</dimen>
+    <dimen name="ma_lg">80dp</dimen>
+    <dimen name="icon">500dp</dimen>
+    <dimen name="space_y_login">100dp</dimen>
+    <dimen name="card_radius">8dp</dimen>
+    <dimen name="card_elevation">6dp</dimen>
+    <dimen name="image_beer">150dp</dimen>
+    <dimen name="image_beer_detail">250dp</dimen>
+    <dimen name="card_title">24sp</dimen>
+    <dimen name="card_subtitle">18sp</dimen>
+    <dimen name="radius_default">20dp</dimen>
+    <dimen name="text_description">26dp</dimen>
+    <dimen name="image_splash">400dp</dimen>
+    <dimen name="text_default">35sp</dimen>
+</resources>

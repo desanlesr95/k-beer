@@ -14,13 +14,8 @@ public interface BeerDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     long insertBeer(Beer beer);
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertBeers(Beer[] beer);
-
     @Query("SELECT * from beer")
     Beer[] getBeers();
 
-    @Query("DELETE from beer")
-    void deleteAll();
 
 }

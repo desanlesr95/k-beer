@@ -7,4 +7,6 @@ public class Constants {
     public static String INGREDIENT ="ingredient";
 
     public static String STRATEGY = "strategy_of";
+
+    public static String PREFERENCES_NAME = "name-preference";
 }

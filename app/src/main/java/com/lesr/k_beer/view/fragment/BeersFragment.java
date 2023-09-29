@@ -38,8 +38,9 @@ public class BeersFragment extends Fragment {
     ProgressDialog progressDialog;
     BeerAdapter beerAdapter;
     int page = 1;
-    int strategy = 0;
+    boolean strategy = true;  // 0 API 1 BD
     Boolean end =false;
+    int countIntents = 0;
     public BeersFragment() {
 
     }
@@ -59,7 +60,7 @@ public class BeersFragment extends Fragment {
         progressDialog.setMessage(getString(R.string.loading));
         ((MainActivity) requireActivity()).setTitleActionBar(getString(R.string.title_beer_list));
         viewModel.init(getActivity());
-        beerAdapter = new BeerAdapter(getActivity(),strategy);
+        beerAdapter = new BeerAdapter(getActivity(),strategy?1:0);
         binding.rvBeers.setAdapter(beerAdapter);
         ActionBar actionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();
 
@@ -70,25 +71,38 @@ public class BeersFragment extends Fragment {
             @Override
             public void onChanged(Beer[] beers) {
                 progressDialog.dismiss();
-                Log.i("beers", Arrays.toString(beers));
                 if (beers != null){
-                    beerAdapter.setStrategy(strategy);
+                    beerAdapter.setStrategy(strategy?1:0);
                     if (beers.length == 0){
-                        end = true;
+                        if (!strategy){
+                            end = true;
+                        }
+                        else{
+                            strategy = false;
+                            loadBeers();
+                        }
+
                     }
                     else{
                         beerAdapter.addBeers(beers);
+                        if (!strategy){
+                            viewModel.insertBeer(beers);
+                        }
+                        else{
+                            end = true;
+                        }
                     }
 
-                    if (strategy == 0){
-                        viewModel.insertBeer(beers);
-                    }
+
                 }
                 else{
-                    strategy = 1;
-                    beerAdapter.setStrategy(strategy);
-                    viewModel.getBeersBD();
-                    end = true;
+                    strategy = !strategy;
+                    beerAdapter.setStrategy(strategy?1:0);
+                    countIntents ++;
+                    loadBeers();
+                    if (countIntents == 5){
+                        end = true;
+                    }
                 }
 
             }
@@ -103,7 +117,7 @@ public class BeersFragment extends Fragment {
             @Override
             public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-                if(strategy == 0){
+                if(!strategy){
                     GridLayoutManager layoutManager = (GridLayoutManager)recyclerView.getLayoutManager();
                     int lastItem  = layoutManager.findLastCompletelyVisibleItemPosition();
                     int currentTotalCount = layoutManager.getItemCount();
@@ -124,7 +138,13 @@ public class BeersFragment extends Fragment {
     public void loadBeers(){
         if (!end){
             progressDialog.show();
-            viewModel.getBeersApi(page);
+            if (strategy){
+                viewModel.getBeersBD();
+            }
+            else{
+                viewModel.getBeersApi(page);
+            }
+
         }
     }
 }

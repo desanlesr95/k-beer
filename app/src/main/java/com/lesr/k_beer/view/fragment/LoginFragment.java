@@ -31,11 +31,6 @@ public class LoginFragment extends Fragment {
     }
 
 
-    public static LoginFragment newInstance(String param1, String param2) {
-        LoginFragment fragment = new LoginFragment();
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +44,7 @@ public class LoginFragment extends Fragment {
         NavController navController = Navigation.findNavController(requireActivity(),R.id.nav_controller);
         viewModel = new ViewModelProvider(this).get(LoginViewModel.class);
         viewModel.init(getContext());
+        viewModel.requestNamePreference();
         ((MainActivity) requireActivity()).hideActionBarTitle();
         viewModel.getUsername().observe(getActivity(), new Observer<String>() {
             @Override

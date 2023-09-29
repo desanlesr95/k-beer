@@ -11,7 +11,11 @@
 
         <action
             android:id="@+id/action_fragment_login_to_fragment_beerList"
-            app:destination="@id/fragment_beerList" />
+            app:destination="@id/fragment_beerList"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
     <fragment android:id="@+id/fragment_beerList"
@@ -20,7 +24,11 @@
 
         <action
             android:id="@+id/action_fragment_beerList_to_fragment_beerDetail"
-            app:destination="@id/fragment_beerDetail" />
+            app:destination="@id/fragment_beerDetail"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
 
     </fragment>
 
@@ -32,7 +40,11 @@
 
         <action
             android:id="@+id/action_fragment_beerDetail_to_fragment_ingredients"
-            app:destination="@id/fragment_ingredients" />
+            app:destination="@id/fragment_ingredients"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
 

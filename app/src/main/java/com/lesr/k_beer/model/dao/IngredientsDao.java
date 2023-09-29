@@ -19,10 +19,6 @@ public interface IngredientsDao {
     @Query("SELECT * from ingredients where idBeer = :idBeer")
     Ingredients getIngredients(int idBeer);
     @Query("SELECT id_ingredient from ingredients where idBeer = :idBeer")
-    int[] getIngredientsIds(int idBeer);
-    @Query("DELETE from ingredients")
-    void deleteAll();
-    @Query("SELECT id_ingredient from ingredients where idBeer = :idBeer")
     int[] getIngredientsIdsByBeer(int idBeer);
     @Query("DELETE from ingredients where idBeer = :idBeer")
     void deleteAllByIdBeer(int idBeer);

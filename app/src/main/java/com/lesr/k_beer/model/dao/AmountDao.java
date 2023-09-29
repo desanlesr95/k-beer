@@ -12,9 +12,6 @@ public interface AmountDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     long insertAmount(Amount amounts);
 
-    @Query("DELETE from amount")
-    void deleteAll();
-
     @Query("SELECT * from amount where id_amount = :id ")
     Amount getAmountById(int id);
 

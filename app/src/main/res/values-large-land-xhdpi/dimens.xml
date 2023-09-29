@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="titleApp">35dp</dimen>
-    <dimen name="pa_default">14dp</dimen>
-    <dimen name="pa_md">20dp</dimen>
-    <dimen name="pa_lg">34dp</dimen>
+    <dimen name="titleApp">26dp</dimen>
+    <dimen name="pa_default">16dp</dimen>
+    <dimen name="pa_md">24dp</dimen>
+    <dimen name="pa_lg">50dp</dimen>
     <dimen name="ma_default">8dp</dimen>
-    <dimen name="ma_md">12dp</dimen>
-    <dimen name="ma_lg">25dp</dimen>
+    <dimen name="ma_md">16dp</dimen>
+    <dimen name="ma_lg">50dp</dimen>
     <dimen name="icon">120dp</dimen>
-    <dimen name="space_y_login">50dp</dimen>
+    <dimen name="space_y_login">15dp</dimen>
     <dimen name="card_radius">8dp</dimen>
     <dimen name="card_elevation">6dp</dimen>
     <dimen name="image_beer">150dp</dimen>

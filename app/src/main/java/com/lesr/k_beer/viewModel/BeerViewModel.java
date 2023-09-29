@@ -144,4 +144,13 @@ public class BeerViewModel extends ViewModel {
     }
 
 
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+        if (db != null && db.isOpen()) {
+            db.close();
+        }
+    }
+
+
 }

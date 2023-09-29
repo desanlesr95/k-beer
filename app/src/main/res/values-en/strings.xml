@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">K-beer</string>
+    <string name="login">Login</string>
+    <string name="input_name">Write your name</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_beer_list">Beers</string>
+    <string name="loading">Loading..</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="attenuation">Attenuation</string>
+    <string name="abv">Alcohol</string>
+    <string name="ibu">Lúpulos</string>
+    <string name="ph">Ph</string>
+    <string name="srm">SRM</string>
+    <string name="brewers_tips">Brewers tips</string>
+    <string name="food_pairing">Food pairing</string>
+    <string name="malt">Mata</string>
+    <string name="name">Name:</string>
+    <string name="cant">Amount:</string>
+</resources>

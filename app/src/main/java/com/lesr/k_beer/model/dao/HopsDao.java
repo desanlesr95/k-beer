@@ -27,6 +27,4 @@ public interface HopsDao {
     @Query("DELETE from hops where ingredientsId IN (:ingredients)")
     void deleteByIngredients(int[] ingredients);
 
-    @Query("DELETE from hops")
-    void deleteAll();
 }

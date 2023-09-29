@@ -57,6 +57,7 @@ public class BeerDetailFragment extends Fragment {
                 System.out.println(beer);
                 if(args.getInt(Constants.STRATEGY) == 1){
                     beer.ingredients = viewModel.getIngredients(beer.id);
+                    System.out.println(beer);
                 }
                 ((MainActivity) requireActivity()).setTitleActionBar(beer.getName());
                 binding.setData(beer);

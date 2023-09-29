@@ -24,8 +24,6 @@ import com.lesr.k_beer.view.MainActivity;
 
 public class IngredientsFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     FragmentIngredientsBinding binding;
     Ingredients ingredients;
     public IngredientsFragment() {

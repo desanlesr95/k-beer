@@ -16,11 +16,6 @@ public interface MaltDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertMalt(Malt malt);
 
-    @Query("DELETE from malt")
-    void deleteAll();
-
-    @Query("SELECT * from amount where id_amount IN (:ids)")
-    Amount[] getAmountArray(int ids);
     @Query("SELECT * from malt where ingredientsId = :ingredientsId")
     Malt[] getMaltArray(int ingredientsId);
 

@@ -22,7 +22,7 @@ public class BindingAdapters {
 
     @BindingAdapter("setAbv")
     public static void setAlcoholPorcent(TextView view, Float abv){
-       view.setText("% "+abv + " de alcohol");
+       view.setText(abv + " % de alcohol");
     }
 
 

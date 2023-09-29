@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.lesr.k_beer.R;
+import com.lesr.k_beer.util.Constants;
 
 public class LoginViewModel extends ViewModel {
     MutableLiveData<String> _username = new MutableLiveData<>();
@@ -19,11 +20,19 @@ public class LoginViewModel extends ViewModel {
     public LiveData<String> getUsername() {
         return username;
     }
-
+    Context context;
     public void init(Context context){
-        sharedPreferences = context.getSharedPreferences(context.getString(R.string.preference), Context.MODE_PRIVATE);
-        name_preference = context.getString(R.string.preference_name);
-        _username.setValue(sharedPreferences.getString(name_preference,""));
+        this.context = context;
+        sharedPreferences = context.getSharedPreferences(Constants.PREFERENCES_NAME, Context.MODE_PRIVATE);
+    }
+
+    public void requestNamePreference() {
+        _username.setValue(getNamepreference());
+    }
+
+    public String getNamepreference() {
+        return  sharedPreferences.getString(name_preference,"");
+
     }
 
     public void addName(String name){
