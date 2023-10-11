@@ -22,13 +22,23 @@ public class BindingAdapters {
 
     @BindingAdapter("setAbv")
     public static void setAlcoholPorcent(TextView view, Float abv){
-       view.setText(abv + " % de alcohol");
+        try{
+            view.setText(abv + " % de alcohol");
+        }catch (Exception e){
+            view.setText("?");
+        }
+
     }
 
 
     @BindingAdapter("floatToString")
     public static void floatToString(TextView view, Float number){
-        view.setText(number.toString());
+        try{
+            view.setText(number.toString());
+        }catch (Exception e){
+            view.setText("?");
+        }
+
     }
 
     @BindingAdapter("arrayToString")

@@ -55,8 +55,10 @@ public class LoginFragment extends Fragment {
         binding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                viewModel.addName(binding.edtName.getText().toString());
-                navController.navigate(R.id.action_fragment_login_to_fragment_beerList);
+                if (!binding.edtName.getText().toString().isEmpty()){
+                    viewModel.addName(binding.edtName.getText().toString());
+                    navController.navigate(R.id.action_fragment_login_to_fragment_beerList);
+                }
             }
         });
         return binding.getRoot();
